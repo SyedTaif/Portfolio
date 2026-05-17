@@ -232,36 +232,48 @@ export default function Portfolio() {
 
   </div>
 </section>
-      {/* Projects */}
-      <section id="projects" className="relative z-10 px-6 md:px-20 py-20">
-        <h2 className="text-4xl font-bold text-center text-cyan-400 mb-14">
-          Projects
-        </h2>
+<section>
+     <div className="grid md:grid-cols-3 gap-8">
+  {[
+    {
+      title: "Jarvis AI Assistant",
+      desc: "Voice-controlled AI assistant with automation features.",
+      link: "https://github.com/yourusername/jarvis-ai",
+    },
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {[
-            {
-              title: "Jarvis AI Assistant",
-              desc: "Voice-controlled AI assistant with automation features.",
-            },
-            {
-              title: "Ecommerce",
-              desc: "A modern full-stack e-commerce platform with product listings, cart system, secure checkout, and responsive UI.",
-            },
-            {
-              title: "AI Portfolio System",
-              desc: "A futuristic portfolio with animations and AI theme.",
-            },
-          ].map((project, i) => (
-            <div
-              key={i}
-              className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-cyan-400 hover:-translate-y-2 transition duration-300 backdrop-blur-md"
-            >
-              <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
-              <p className="text-gray-400">{project.desc}</p>
-            </div>
-          ))}
-        </div>
+    {
+      title: "Ecommerce",
+      desc: "A modern full-stack e-commerce platform with product listings, cart system, secure checkout, and responsive UI.",
+      link: "https://your-ecommerce.vercel.app",
+    },
+
+    {
+      title: "AI Portfolio System",
+      desc: "A futuristic portfolio with animations and AI theme.",
+      link: "https://portfolio-rho-topaz-x4owcm1yim.vercel.app/",
+    },
+  ].map((project, i) => (
+    <div
+      key={i}
+      className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-cyan-400 hover:-translate-y-2 transition duration-300 backdrop-blur-md"
+    >
+
+      <a
+        href={project.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-2xl font-bold mb-4 block hover:text-cyan-400 transition"
+      >
+        {project.title}
+      </a>
+
+      <p className="text-gray-400">
+        {project.desc}
+      </p>
+
+    </div>
+  ))}
+</div>
       </section>
 
       {/* Contact */}
